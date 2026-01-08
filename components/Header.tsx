@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header = ({ title, onMenuClick }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-30 h-16 bg-sidebar backdrop-blur border-b border-border">
+    <header className="h-16 bg-sidebar backdrop-blur border-b border-border">
       <div className="flex items-center justify-between h-full px-4 lg:px-6">
         {/* Left section */}
         <div className="flex items-center gap-4">

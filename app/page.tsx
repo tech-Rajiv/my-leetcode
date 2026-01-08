@@ -1,7 +1,9 @@
-
+import AllQuestionHome from "@/components/HomePage/AllQuestionHome";
 
 export default function Home() {
   return (
-    <div>Hii</div>
+    <div className="overflow-x-auto overscroll-x-contain">
+      <AllQuestionHome />
+    </div>
   );
 }
