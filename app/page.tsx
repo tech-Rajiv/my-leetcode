@@ -1,9 +1,9 @@
-import AllQuestionHome from "@/components/HomePage/AllQuestionHome";
+import Homepage from "@/components/HomePage/Homepage";
 
 export default function Home() {
   return (
     <div className="overflow-x-auto overscroll-x-contain">
-      <AllQuestionHome />
+      <Homepage />
     </div>
   );
 }

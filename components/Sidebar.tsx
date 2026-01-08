@@ -1,9 +1,6 @@
-
-import {  X, ArrowDownAZ, CodeXml, Code } from "lucide-react";
+import { X, ArrowDownAZ, CodeXml, Code } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-
 
 interface SidebarProps {
   isOpen: boolean;
@@ -11,9 +8,9 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { icon: ArrowDownAZ, label: "All Questions", path: "/", count: 15 },
-  { icon: Code, label: "Arrays", path: "/arrays" , count: 5 },
-  { icon: Code, label: "Strings", path: "/strings" , count: 8 },
+  { icon: ArrowDownAZ, label: "Dashboard", path: "/", count: 15 },
+  { icon: Code, label: "Arrays", path: "/arrays", count: 5 },
+  { icon: Code, label: "Strings", path: "/strings", count: 8 },
   { icon: Code, label: "Algorithms", path: "/algorithms", count: 2 },
 ];
 
@@ -43,9 +40,13 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         <div className="flex items-center justify-between h-16 px-6 border-b border-sidebar-border shrink-0">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-bold text-sm text-primary-foreground">LC</span>
+              <span className="font-bold text-sm text-primary-foreground">
+                LC
+              </span>
             </div>
-            <span className="font-semibold text-sidebar-foreground">Acme Inc</span>
+            <span className="font-semibold text-sidebar-foreground">
+              Acme Inc
+            </span>
           </div>
           <button
             onClick={onClose}
@@ -60,18 +61,18 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           <ul className="space-y-1">
             {navItems.map((item) => (
               <li key={item.path}>
-
                 <Link
                   href={item.path}
                   onClick={onClose}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${
-                      pathname === item.path
-                        ? 'bg-sidebar-primary text-sidebar-primary-foreground'
-                        : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-foreground'
-                    }`}
+                  className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${
+                    pathname === item.path
+                      ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                      : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-foreground"
+                  }`}
                 >
                   <item.icon className="w-5 h-5" />
-                  {item.label} <span className="opacity-60">({item.count})</span>
+                  {item.label}{" "}
+                  <span className="opacity-60">({item.count})</span>
                 </Link>
               </li>
             ))}
@@ -82,11 +83,17 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         <div className="p-4 border-t border-sidebar-border shrink-0">
           <div className="flex items-center gap-3 px-3 py-2">
             <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-              <span className="text-muted-foreground text-xs font-medium">JD</span>
+              <span className="text-muted-foreground text-xs font-medium">
+                JD
+              </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-sidebar-foreground truncate">John Doe</p>
-              <p className="text-xs text-sidebar-foreground/60 truncate">john@acme.com</p>
+              <p className="text-sm font-medium text-sidebar-foreground truncate">
+                John Doe
+              </p>
+              <p className="text-xs text-sidebar-foreground/60 truncate">
+                john@acme.com
+              </p>
             </div>
           </div>
         </div>
