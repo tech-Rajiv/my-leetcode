@@ -1,21 +1,9 @@
-"use client";
-import {
-  ALL_QUESTIONS,
-  TOP_150_QUESTIONS,
-  TOP_75_QUESTIONS,
-} from "@/lib/consts";
-
-function TopBarForQuestions({
-  setSelectedTab,
-  selectedTab,
-}: {
-  setSelectedTab: (tab: string) => void;
-  selectedTab: string;
-}) {
+function TopBarForQuestions({}) {
   const topHeadings = [
-    { label: ALL_QUESTIONS },
-    { label: TOP_75_QUESTIONS },
-    { label: TOP_150_QUESTIONS },
+    { label: "All" },
+    { label: "Arrays" },
+    { label: "Strings" },
+    { label: "Algorithms" },
   ];
 
   return (
@@ -23,7 +11,6 @@ function TopBarForQuestions({
       {topHeadings.map((heading, index) => (
         <button
           key={index}
-          onClick={() => setSelectedTab(heading.label)}
           className={`
         min-w-40
         px-6 py-4
@@ -34,11 +21,7 @@ function TopBarForQuestions({
         whitespace-nowrap
         transition
         duration-200
-        ${
-          selectedTab === heading.label
-            ? "bg-gray-800 text-white"
-            : "bg-white text-black"
-        }
+        
       `}
         >
           {heading.label}

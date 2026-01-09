@@ -8,10 +8,11 @@ import {
 } from "@/components/ui/table";
 import HeadingOfAllQues from "./HeadingOfAllQues";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 function TableOfAllQues({
-  allQues,
+  questions,
 }: {
-  allQues: Array<{
+  questions: Array<{
     id: number;
     title: string;
     difficulty: string;
@@ -22,8 +23,6 @@ function TableOfAllQues({
 }) {
   return (
     <div className=" overflow-x-auto">
-      <HeadingOfAllQues />
-
       <Table className=" border">
         <TableHeader className="bg-muted">
           <TableRow className="">
@@ -41,7 +40,7 @@ function TableOfAllQues({
         </TableHeader>
 
         <TableBody>
-          {allQues.map((ques) => (
+          {questions.map((ques) => (
             <TableRow key={ques.id} className="hover:bg-muted/50 transition">
               <TableCell className=" text-muted-foreground">
                 {ques.id}
@@ -49,9 +48,12 @@ function TableOfAllQues({
 
               {/* Controlled Question Width */}
               <TableCell className="max-w-xl">
-                <p className="line-clamp-2 text-sm leading-snug hover:underline underline-offset-2  cursor-pointer">
+                <Link
+                  href={"/question/" + ques.id}
+                  className="line-clamp-2 text-sm leading-snug hover:underline underline-offset-2  cursor-pointer"
+                >
                   {ques.title}
-                </p>
+                </Link>
               </TableCell>
 
               <TableCell className="">

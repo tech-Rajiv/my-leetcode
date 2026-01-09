@@ -8,10 +8,17 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { icon: ArrowDownAZ, label: "Dashboard", path: "/", count: 15 },
-  { icon: Code, label: "Arrays", path: "/arrays", count: 5 },
-  { icon: Code, label: "Strings", path: "/strings", count: 8 },
-  { icon: Code, label: "Algorithms", path: "/algorithms", count: 2 },
+  { icon: ArrowDownAZ, label: "All Questions", path: "/" },
+  {
+    icon: Code,
+    label: "Top 75 Questions",
+    path: "/top-75-questions",
+  },
+  {
+    icon: Code,
+    label: "Top 150 Questions",
+    path: "/top-150-questions",
+  },
 ];
 
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
@@ -30,7 +37,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-0 left-0 z-50 h-full w-64 bg-sidebar border-r border-sidebar-border
+          fixed top-0 left-0 z-50 h-full w-72 bg-sidebar border-r border-sidebar-border
           transform transition-transform duration-300 ease-in-out flex flex-col
           lg:translate-x-0 lg:z-auto lg:h-screen lg:sticky lg:top-0
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
@@ -64,15 +71,14 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 <Link
                   href={item.path}
                   onClick={onClose}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${
+                  className={`flex items-center gap-3 p-3 rounded-md transition-colors ${
                     pathname === item.path
                       ? "bg-sidebar-primary text-sidebar-primary-foreground"
                       : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-foreground"
                   }`}
                 >
                   <item.icon className="w-5 h-5" />
-                  {item.label}{" "}
-                  <span className="opacity-60">({item.count})</span>
+                  {item.label}
                 </Link>
               </li>
             ))}

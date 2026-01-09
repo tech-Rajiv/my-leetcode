@@ -7,7 +7,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
 export const allQuestionsData = wholeQuestionData
 export const top75QuestionsData = wholeQuestionData.filter((question) =>
   question.includeIn.includes(TOP_75_QUESTIONS)

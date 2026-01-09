@@ -1,0 +1,1 @@
+export const getAnswers=async (questionId: string) => {}
