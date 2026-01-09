@@ -16,19 +16,21 @@ function TableOfAllQues({
     title: string;
     difficulty: string;
     topic: string;
+    url: string;
+    includeIn: string[];
   }>;
 }) {
   return (
     <div className=" overflow-x-auto">
       <HeadingOfAllQues />
 
-      <Table className="">
+      <Table className=" border">
         <TableHeader className="bg-muted">
           <TableRow className="">
             <TableHead className="w-18  font-semibold">No</TableHead>
 
             {/* Question column gets remaining space */}
-            <TableHead className="font-semibold max-w-xl">Question</TableHead>
+            <TableHead className="font-semibold ">Question</TableHead>
 
             <TableHead className="w-32  font-semibold">Difficulty</TableHead>
 
@@ -46,7 +48,7 @@ function TableOfAllQues({
               </TableCell>
 
               {/* Controlled Question Width */}
-              <TableCell className="max-w-50">
+              <TableCell className="max-w-xl">
                 <p className="line-clamp-2 text-sm leading-snug hover:underline underline-offset-2  cursor-pointer">
                   {ques.title}
                 </p>
@@ -64,7 +66,8 @@ function TableOfAllQues({
 
               <TableCell className=" ">
                 <a
-                  href="#"
+                  href={ques.url}
+                  target="_blank"
                   className="text-sm font-medium text-muted-foreground hover:underline hover:text-blue-400 flex items-center gap-1"
                 >
                   Leetcode

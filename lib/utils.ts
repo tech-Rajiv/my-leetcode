@@ -1,16 +1,17 @@
 import { wholeQuestionData } from "@/data/data"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { TOP_150_QUESTIONS, TOP_75_QUESTIONS } from "./consts"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
 
-export const allQuestions = wholeQuestionData
-export const top75Questions = wholeQuestionData.filter((question) =>
-  question.includeIn.includes("Top 75 Questions")
+export const allQuestionsData = wholeQuestionData
+export const top75QuestionsData = wholeQuestionData.filter((question) =>
+  question.includeIn.includes(TOP_75_QUESTIONS)
 )
-export const top150Questions = wholeQuestionData.filter((question) =>
-  question.includeIn.includes("Top 150 Questions")
+export const top150QuestionsData = wholeQuestionData.filter((question) =>
+  question.includeIn.includes(TOP_150_QUESTIONS)
 )
